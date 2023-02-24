@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 import csv
 import os
 import time
+from tqdm import tqdm
 
 #URL du site à scrapper 
 url = "http://books.toscrape.com/"
@@ -95,11 +96,11 @@ def get_dict_all_category():
     category = []
 
     # Boucle FOR pour récupérer toutes les catégories
-    for bloc_category in all_category_ul:
+    for bloc_category in tqdm(all_category_ul, desc="Progression", unit=" bloc", total=len(all_category_ul), leave=False, position=0, ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
         # On utilise la fonction find_all() pour récupérer toutes les catégories
         all_a_cat = bloc_category.find_all("a")
         # Boucle FOR pour récupérer toutes les catégories
-        for a_info in all_a_cat:
+        for a_info in tqdm(all_a_cat,desc="Progression", unit=" catégorie", total=len(all_a_cat), leave=False, position=0, ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
             # On récupère le lien de la catégorie
             # On utilise la fonction strip() pour supprimer les espaces en début et fin de chaîne
             # On utilise la fonction lower() pour convertir la chaîne en minuscule
@@ -182,7 +183,7 @@ def get_detail_livre(url_detail_livre, with_picture=False, cat_dir=""):
     if with_picture:
         name_picture = title.lower()
         char_replace = "!#$%^&*()?,': ’“\\/\"."
-        for char in char_replace:
+        for char in tqdm(char_replace,desc="Progresion", unit="char", ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
             name_picture = name_picture.replace(char, "_")
 
         if cat_dir != "":
@@ -208,7 +209,7 @@ def get_detail_livre(url_detail_livre, with_picture=False, cat_dir=""):
         # On utilise la fonction replace() pour remplacer les caractères accentués par des tirets
         # On utilise la fonction replace() pour remplacer les tirets par des tirets
         char_replace = "!#$%^&*()?,': ’“\\/\"."
-        for char in char_replace:
+        for char in tqdm(char_replace,desc="Progresion", unit="char", ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
             name_picture = name_picture.replace(char, "_")
         if cat_dir != "":
             name_picture = cat_dir + "/pictures/" + name_picture
@@ -239,15 +240,15 @@ def get_list_book_by_category(category_url, link=None, page="index.html"):
     # On utilise la fonction find_all() pour récupérer tous les liens
     # On utilise la fonction get() pour récupérer l'attribut href de chaque lien
     # On utilise la fonction append() pour ajouter chaque lien dans le tableau
-    for bloc_link_livre in all_link_livre:
+    for bloc_link_livre in tqdm(all_link_livre,desc="Progresion", unit="link", ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
         all_a_livre = bloc_link_livre.find_all("a")
-        for link_livre in all_a_livre:
+        for link_livre in tqdm(all_a_livre,desc="Progresion", unit="link", ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
             link.append(url + 'catalogue/' + link_livre.get('href')[9:])
     # On utilise la fonction find() pour récupérer le lien vers la page suivante
 
     have_pagination = soup_category_par_page.find_all("li", class_="next")
     if have_pagination:
-        for link_pagination in have_pagination:
+        for link_pagination in tqdm(have_pagination,desc="Progresion", unit="link", ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
             a_pagination = link_pagination.find_all("a")
             url_pagination = a_pagination[0].get('href')
             # On rappelle la fonction dans laquelle et s'il y a une page suivante et on rajoute les livres à la suite
@@ -258,7 +259,7 @@ def get_list_book_by_category(category_url, link=None, page="index.html"):
 # Bloc de code : récupération de tous les détails des livres
 def get_all_book_detail(category_dict, with_picture=False):
 
-    for category in category_dict:
+    for category in tqdm(category_dict,desc="Progresion", unit="category", ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
         url_category_split = category['url'][:-10]
         category_url = url + url_category_split
 
@@ -273,7 +274,7 @@ def get_all_book_detail(category_dict, with_picture=False):
             # Si le fichier est vide, alors on met l'entête
             if os.path.getsize(cat_dir + '/' + category["nom"] + ".csv") == 0:
                 writer.writerow(en_tete)
-            for link_livre in all_link_livre:
+            for link_livre in tqdm(all_link_livre,desc="Progresion", unit="link", ncols=100, bar_format="{l_bar}{bar:20}{r_bar}", ascii=True, smoothing=0.1, miniters=1, mininterval=0.1, maxinterval=0.1):
                 writer.writerows([get_detail_livre(link_livre, with_picture, cat_dir)])
 
 if __name__ == "__main__":
