@@ -59,10 +59,10 @@ $ git clone https://github.com/MicSa/public/
 
 #### Installation des packages/modules 
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 ### Utilisation
-Lancer le script codeSHOW.py
+Lancer le script ```codeSHOW.py```
 
 4 options sont proposées : 
 - Télécharger par URL
@@ -79,16 +79,16 @@ Python 3.10.9 (main, Dec 19 2022, 17:35:49) [GCC 12.2.0] on linux
 
 #### Création de l'environnement virtuel 
 
-cd public
-python -m venv env
-source env/bin/activate
+```cd public```
+```python -m venv env```
+```source env/bin/activate```
 
 #### Installation des packages/modules 
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 ### Utilisation
-Lancer le script codeSHOW.py
+Lancer le script ```codeSHOW.py```
 
 4 options sont proposées : 
 - Télécharger par URL
@@ -102,4 +102,4 @@ Les fichiers csv sont ouvrables avec un tableaur.
 Python 3.10.9 (main, Dec 19 2022, 17:35:49) [GCC 12.2.0] on linux
 <h3>Lancer le programme </h3>
 
-$ python codeSHOW.py
+$ python ```codeSHOW.py```
