@@ -11,7 +11,7 @@ Bienvenue ! Vous trouverez ici le Projet 2 du parcours<a href="https://openclass
 
 </h2>
 
-> Scénario 
+> Scénario 💬 
 > ###  
 
 Vous êtes analyste marketing chez Books Online, une importante librairie en ligne spécialisée dans les livres d'occasion. Dans le cadre de vos fonctions, vous essayez de suivre manuellement les prix des livres d'occasion sur les sites web de vos concurrents, mais cela représente trop de travail et vous n'arrivez pas à y faire face : il y a trop de livres et trop de librairies en ligne ! Vous et votre équipe avez décidé d'automatiser cette tâche laborieuse via un programme (un scraper) développé en Python, capable d'extraire les informations tarifaires d'autres librairies en ligne.
@@ -21,13 +21,10 @@ Vous êtes analyste marketing chez Books Online, une importante librairie en lig
 <p align="center" href="" class="oc-imageLink oc-imageLink--disabled"><img src="https://user.oc-static.com/upload/2020/09/22/1600779540759_Online%20bookstore-01.png"></p>
 
 
-
-
 </br>
 
- 💬 
 
-> [!Livrables attendus 🔭 ] 
+> Livrables attendus 🔭  
 > ##   
 
 1.  Un document TXT ou PDF contenant le lien vers le **repository GitHub** public qui doit contenir les éléments suivants:
@@ -44,7 +41,7 @@ Vous êtes analyste marketing chez Books Online, une importante librairie en lig
 
 
 <h2> Installation et démarrage du projet</h2> 
-<h3>Windows  </h3> 
+<h3>Windows</h3> 
 
 Depuis un terminal , se déplacer dans le dossier applicatif souhaité :
 
