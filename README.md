@@ -7,9 +7,9 @@ Vous êtes analyste marketing chez Books Online, une importante librairie en lig
 
    Un document TXT ou PDF contenant le lien vers le **repository GitHub** public qui doit contenir les éléments suivants:
 
--   l'ensemble de votre code d'application ;
--   le fichier requirements.txt, mais pas l'environnement virtuel lui-même ;
--   un fichier README.md expliquant comment créer et activer l'environnement virtuel, puis exécuter le code d'application ;
+-   l'ensemble de votre code d'application 
+-   le fichier requirements.txt, mais pas l'environnement virtuel lui-même 
+-   un fichier README.md expliquant comment créer et activer l'environnement virtuel, puis exécuter le code d'application 
 -   les données/images extraites ne doivent pas faire partie du repository lui-même.
 
   Un fichier compressé ZIP contenant toute la **data** : les **données extraites et les images associées** dans un format ou une structure facile à suivre.
