@@ -18,7 +18,7 @@ Vous êtes analyste marketing chez Books Online, une importante librairie en lig
 
 <p align="center">
 
-<a href="" class="oc-imageLink oc-imageLink--disabled"><img src="https://user.oc-static.com/upload/2020/09/22/1600779540759_Online%20bookstore-01.png"></a>
+<a align="center" href="" class="oc-imageLink oc-imageLink--disabled"><img src="https://user.oc-static.com/upload/2020/09/22/1600779540759_Online%20bookstore-01.png"></a>
 
 </p>
 
