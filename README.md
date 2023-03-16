@@ -53,9 +53,9 @@ $ git clone https://github.com/MicSa/public/
 
 #### Création de l'environnement virtuel 
 
-cd public
-python -m venv env
-source env/bin/activate
+```cd public```
+```python -m venv env```
+```source env/bin/activate```
 
 #### Installation des packages/modules 
 
