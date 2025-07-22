@@ -1,4 +1,28 @@
+# Images
 *.jpeg
 *.jpg
 *.png
+
+# Données générées
+*.csv
+output/
+
+# Environnement virtuel
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# IDE
+.vscode/
+.idea/
+
+# Système
+.DS_Store
+Thumbs.db
 
